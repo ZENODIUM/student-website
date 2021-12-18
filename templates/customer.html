@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+     <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='myfont/css/all.min.css')}}">
+    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+</head>
+<style>
+
+h2{
+    color:blue;
+}
+</style>
+<body>
+     <div class="container">
+        <div class="col-md-offset-3 col-md-5">
+            <h2 class="page-header text-primary text-center">Student page</h2>
+            <h3 class="text-success">Welcome : {{session["name"]}}</h3>
+            <hr>
+            <div>
+                <h2>Exams</h2>
+            </div>
+            <div align = "center">
+            <h2><b>{{exam}}</b></h2>
+          </div>
+
+            <br>
+
+            <div>
+                <h2>Marks</h2>
+            </div>
+            <div align = "center">
+           <h2><b>{{marks}}%</b></h2>
+          </div>
+
+
+            <a href="{{url_for('logout')}}" class="btn btn-primary btn-block">Logout</a>
+        </div>
+     </div>
+</body>
+</html>
